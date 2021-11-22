@@ -74,11 +74,11 @@ const Menu = () => {
 
 
                    
-                        <Link className="all policies" to="privacy.js">
+                        <Link className="dropdown-item" to="privacy.js" >
                             Terms and policies
                         </Link>
 
-                       <div> <Link className="dashboard" to="ipl-dashboard-master/src/pages/App.js">
+                       <div> <Link className="dropdown-item" to="ipl-dashboard-master/src/pages/App.js">
                             IPL
                         </Link> </div>
                         <div className="dropdown-divider"></div>
@@ -95,3 +95,4 @@ const Menu = () => {
 }
 
 export default Menu
+

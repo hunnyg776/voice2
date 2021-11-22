@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://www.sportix.social/'
+export const BASE_URL = 'https://sportix.herokuapp.com/'
