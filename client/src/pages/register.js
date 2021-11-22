@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import { register } from '../redux/actions/authAction'
-
+import spor from '../images/5203788-modified.png'
 const Register = () => {
     const { auth, alert } = useSelector(state => state)
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const initialState = { 
+    const initialState = {
         fullname: '', username: '', email: '', password: '', cf_password: '', gender: 'male'
     }
     const [userData, setUserData] = useState(initialState)
@@ -18,13 +18,13 @@ const Register = () => {
     const [typeCfPass, setTypeCfPass] = useState(false)
 
     useEffect(() => {
-        if(auth.token) history.push("/")
+        if (auth.token) history.push("/")
     }, [auth.token, history])
 
-    
+
     const handleChangeInput = e => {
         const { name, value } = e.target
-        setUserData({...userData, [name]:value})
+        setUserData({ ...userData, [name]: value })
     }
 
     const handleSubmit = e => {
@@ -35,50 +35,51 @@ const Register = () => {
     return (
         <div className="auth_page">
             <form onSubmit={handleSubmit}>
-                <h3 className="text-uppercase text-center mb-4">V-Network</h3>
-
+            <img src={spor} alt="Sportix" className="logo" style={{width:"20%",display:"block",marginLeft:"auto",marginRight:"auto"}} />
+                <h3 className="text-uppercase text-center mb-4"style={{fontWeight:"1000"}}>Sportix </h3>
+              <h3 style={{fontSize:"15px",textAlign:"center",fontStyle:"revert"}}>Learn and Interact with Fun from Athletes</h3>
                 <div className="form-group">
-                    <label htmlFor="fullname">Full Name</label>
+                    <label htmlFor="fullname"style={{fontWeight:"700"}}>Full Name</label>
                     <input type="text" className="form-control" id="fullname" name="fullname"
-                    onChange={handleChangeInput} value={fullname}
-                    style={{background: `${alert.fullname ? '#fd2d6a14' : ''}`}} />
-                    
+                        onChange={handleChangeInput} value={fullname}
+                        style={{ background: `${alert.fullname ? '#fd2d6a14' : ''}` }} />
+
                     <small className="form-text text-danger">
                         {alert.fullname ? alert.fullname : ''}
                     </small>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="username">User Name</label>
+                    <label htmlFor="username"style={{fontWeight:"700"}}>User Name</label>
                     <input type="text" className="form-control" id="username" name="username"
-                    onChange={handleChangeInput} value={username.toLowerCase().replace(/ /g, '')}
-                    style={{background: `${alert.username ? '#fd2d6a14' : ''}`}} />
-                    
+                        onChange={handleChangeInput} value={username.toLowerCase().replace(/ /g, '')}
+                        style={{ background: `${alert.username ? '#fd2d6a14' : ''}` }} />
+
                     <small className="form-text text-danger">
                         {alert.username ? alert.username : ''}
                     </small>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
+                    <label htmlFor="exampleInputEmail1"style={{fontWeight:"700"}}>Email address</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" name="email"
-                    onChange={handleChangeInput} value={email}
-                    style={{background: `${alert.email ? '#fd2d6a14' : ''}`}} />
-                    
+                        onChange={handleChangeInput} value={email}
+                        style={{ background: `${alert.email ? '#fd2d6a14' : ''}` }} />
+
                     <small className="form-text text-danger">
                         {alert.email ? alert.email : ''}
                     </small>
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1"style={{fontWeight:"700"}}>Password</label>
 
                     <div className="pass">
-                        
-                        <input type={ typePass ? "text" : "password" } 
-                        className="form-control" id="exampleInputPassword1"
-                        onChange={handleChangeInput} value={password} name="password"
-                        style={{background: `${alert.password ? '#fd2d6a14' : ''}`}} />
+
+                        <input type={typePass ? "text" : "password"}
+                            className="form-control" id="exampleInputPassword1"
+                            onChange={handleChangeInput} value={password} name="password"
+                            style={{ background: `${alert.password ? '#fd2d6a14' : ''}` }} />
 
                         <small onClick={() => setTypePass(!typePass)}>
                             {typePass ? 'Hide' : 'Show'}
@@ -91,14 +92,14 @@ const Register = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="cf_password">Confirm Password</label>
+                    <label htmlFor="cf_password"style={{fontWeight:"700"}}>Confirm Password</label>
 
                     <div className="pass">
-                        
-                        <input type={ typeCfPass ? "text" : "password" } 
-                        className="form-control" id="cf_password"
-                        onChange={handleChangeInput} value={cf_password} name="cf_password"
-                        style={{background: `${alert.cf_password ? '#fd2d6a14' : ''}`}} />
+
+                        <input type={typeCfPass ? "text" : "password"}
+                            className="form-control" id="cf_password"
+                            onChange={handleChangeInput} value={cf_password} name="cf_password"
+                            style={{ background: `${alert.cf_password ? '#fd2d6a14' : ''}` }} />
 
                         <small onClick={() => setTypeCfPass(!typeCfPass)}>
                             {typeCfPass ? 'Hide' : 'Show'}
@@ -113,26 +114,27 @@ const Register = () => {
                 <div className="row justify-content-between mx-0 mb-1">
                     <label htmlFor="male">
                         Male: <input type="radio" id="male" name="gender"
-                        value="male" defaultChecked onChange={handleChangeInput} />
+                            value="male" defaultChecked onChange={handleChangeInput} />
                     </label>
 
                     <label htmlFor="female">
                         Female: <input type="radio" id="female" name="gender"
-                        value="female" onChange={handleChangeInput} />
+                            value="female" onChange={handleChangeInput} />
                     </label>
 
                     <label htmlFor="other">
                         Other: <input type="radio" id="other" name="gender"
-                        value="other" onChange={handleChangeInput} />
+                            value="other" onChange={handleChangeInput} />
                     </label>
                 </div>
-                
-                <button type="submit" className="btn btn-dark w-100">
+
+                <button type="submit" className="btn btn-dark w-100" style={{background: "blue"}}>
                     Register
                 </button>
-
-                <p className="my-2">
-                    Already have an account? <Link to="/" style={{color: "crimson"}}>Login Now</Link>
+                <p3 style={{fontSize:"11px"}}>By signing up, you agree to our Terms , Data Policy and Cookies Policy .</p3>
+               <hr/>
+                <p className="my-2"style={{textAlign:"center"}}>
+                    Already have an account? <Link to="/" style={{ color: "blue" }}>Login Now</Link>
                 </p>
             </form>
         </div>

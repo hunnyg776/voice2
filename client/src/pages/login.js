@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { login } from '../redux/actions/authAction'
 import { useDispatch, useSelector } from 'react-redux'
-
+import spor from '../images/5203788-modified.png'
 
 const Login = () => {
     const initialState = { email: '', password: '' }
@@ -32,10 +32,12 @@ const Login = () => {
     return (
         <div className="auth_page">
             <form onSubmit={handleSubmit}>
-                <h3 className="text-uppercase text-center mb-4">V-Network</h3>
+            <img src={spor} alt="Sportix" className="logo" style={{width:"70%",display:"block",marginLeft:"auto",marginRight:"auto"}} />
+                
+                <h3 className="text-uppercase text-center mb-4" style={{fontWeight:"1000"}}>Sportix</h3>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
+                    <label htmlFor="exampleInputEmail1" style={{fontWeight:"700"}}>Email address</label>
                     <input type="email" className="form-control" id="exampleInputEmail1" name="email"
                     aria-describedby="emailHelp" onChange={handleChangeInput} value={email} />
                     
@@ -45,7 +47,7 @@ const Login = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1" style={{fontWeight:"700"}}>Password</label>
 
                     <div className="pass">
                         
@@ -61,12 +63,12 @@ const Login = () => {
                 </div>
                 
                 <button type="submit" className="btn btn-dark w-100"
-                disabled={email && password ? false : true}>
+                disabled={email && password ? false : true} style={{background: "blue"}}>
                     Login
                 </button>
 
                 <p className="my-2">
-                    You don't have an account? <Link to="/register" style={{color: "crimson"}}>Register Now</Link>
+                    You don't have an account? <Link to="/register" style={{color: "blue"}}>Register Now</Link>
                 </p>
             </form>
         </div>

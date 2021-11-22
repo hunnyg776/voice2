@@ -86,7 +86,7 @@ const EditProfile = ({setOnEdit}) => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="website">Website</label>
+                    <label htmlFor="website">Favourite Sport</label>
                     <input type="text" name="website" value={website}
                     className="form-control" onChange={handleInput} />
                 </div>

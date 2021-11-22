@@ -108,7 +108,7 @@ const StatusModal = () => {
         <div className="status_modal">
             <form onSubmit={handleSubmit}>
                 <div className="status_header">
-                    <h5 className="m-0">Create Post</h5>
+                    <h5 className="m-0" >Create Post</h5>
                     <span onClick={() => dispatch({
                         type: GLOBALTYPES.STATUS, payload: false
                     })}>
@@ -186,11 +186,19 @@ const StatusModal = () => {
                         }
                         
                     </div>
-
+<div class ="sport">
+    <label for="categry">Select sport</label>
+    <select name="category" class="form-control" id="categry" required="required"> 
+                        <option value="">-- Select --</option>
+                        <option value="India" data-val="">Cricket</option>
+                        <option value="Outside India" data-val="">Football</option>
+                    </select>
+    </div>
                 </div>
-
+               <div> <p4 style={{fontSize:"12px"}}>By creating a post you are agreeing with our copyright and privacy policies.</p4> </div>
+               <hr/>
                 <div className="status_footer">
-                    <button className="btn btn-secondary w-100" type="submit">
+                    <button className="btn btn-secondary w-100" type="submit" style={{backgroundColor:"green"}}>
                         Post
                     </button>
                 </div>

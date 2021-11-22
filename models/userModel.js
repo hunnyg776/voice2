@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     },
     avatar:{
         type: String,
-        default: 'https://res.cloudinary.com/devatchannel/image/upload/v1602752402/avatar/avatar_cugq40.png'
+        default: 'https://res.nary.com/sportix776/image/upload/v1635468484/nocov_zusnhb.png'
     },
     role: {type: String, default: 'user'},
     gender: {type: String, default: 'male'},

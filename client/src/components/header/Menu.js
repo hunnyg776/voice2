@@ -8,9 +8,9 @@ import NotifyModal from '../NotifyModal'
 
 const Menu = () => {
     const navLinks = [
-        { label: 'Home', icon: 'home', path: '/'},
-        { label: 'Message', icon: 'near_me', path: '/message'},
-        { label: 'Discover', icon: 'explore', path: '/discover'}
+        { label: 'Home', icon: 'home', path: '/' },
+        { label: 'Message', icon: 'near_me', path: '/message' },
+        { label: 'Discover', icon: 'explore', path: '/discover' }
     ]
 
     const { auth, theme, notify } = useSelector(state => state)
@@ -18,7 +18,7 @@ const Menu = () => {
     const { pathname } = useLocation()
 
     const isActive = (pn) => {
-        if(pn === pathname) return 'active'
+        if (pn === pathname) return 'active'
     }
 
     return (
@@ -34,12 +34,12 @@ const Menu = () => {
                     ))
                 }
 
-                <li className="nav-item dropdown" style={{opacity: 1}} >
-                    <span className="nav-link position-relative" id="navbarDropdown" 
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li className="nav-item dropdown" style={{ opacity: 1 }} >
+                    <span className="nav-link position-relative" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                        <span className="material-icons" 
-                        style={{color: notify.data.length > 0 ? 'crimson' : ''}}>
+                        <span className="material-icons"
+                            style={{ color: notify.data.length > 0 ? 'crimson' : '' }}>
                             favorite
                         </span>
 
@@ -48,16 +48,16 @@ const Menu = () => {
                     </span>
 
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown"
-                    style={{transform: 'translateX(75px)'}}>
+                        style={{ transform: 'translateX(75px)' }}>
                         <NotifyModal />
                     </div>
-                        
+
                 </li>
-           
-            
-                <li className="nav-item dropdown" style={{opacity: 1}} >
-                    <span className="nav-link dropdown-toggle" id="navbarDropdown" 
-                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+                <li className="nav-item dropdown" style={{ opacity: 1 }} >
+                    <span className="nav-link dropdown-toggle" id="navbarDropdown"
+                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <Avatar src={auth.user.avatar} size="medium-avatar" />
                     </span>
 
@@ -65,22 +65,31 @@ const Menu = () => {
                     <Link className="dropdown-item" to={`/profile/${auth.user._id}`}>Profile</Link>
 
                     <label htmlFor="theme" className="dropdown-item"
-                    onClick={() => dispatch({
-                        type: GLOBALTYPES.THEME, payload: !theme
-                    })}>
+                        onClick={() => dispatch({
+                            type: GLOBALTYPES.THEME, payload: !theme
+                        })}>
 
                         {theme ? 'Light mode' : 'Dark mode'}
                     </label>
 
-                    <div className="dropdown-divider"></div>
-                    <Link className="dropdown-item" to="/"
-                    onClick={() => dispatch(logout())}>
-                        Logout
-                    </Link>
-                </div>
-            </li>
-        </ul>
-    </div>
+
+                   
+                        <Link className="all policies" to="privacy.js">
+                            Terms and policies
+                        </Link>
+
+                       <div> <Link className="dashboard" to="ipl-dashboard-master/src/pages/App.js">
+                            IPL
+                        </Link> </div>
+                        <div className="dropdown-divider"></div>
+                        <Link className="dropdown-item" to="/"
+                            onClick={() => dispatch(logout())}>
+                            Logout
+                        </Link>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
     )
 }
