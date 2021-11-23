@@ -62,23 +62,26 @@ const Menu = () => {
                     </span>
 
                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link className="dropdown-item" to={`/profile/${auth.user._id}`}>Profile</Link>
+                        <Link className="dropdown-item" to={`/profile/${auth.user._id}`}>Profile</Link>
 
-                    <label htmlFor="theme" className="dropdown-item"
-                        onClick={() => dispatch({
-                            type: GLOBALTYPES.THEME, payload: !theme
-                        })}>
+                        <label htmlFor="theme" className="dropdown-item"
+                            onClick={() => dispatch({
+                                type: GLOBALTYPES.THEME, payload: !theme
+                            })}>
 
-                        {theme ? 'Light mode' : 'Dark mode'}
-                    </label>
+                            {theme ? 'Light mode' : 'Dark mode'}
+                        </label>
 
 
-                   
+
+                        <Link className="dropdown-item" to="newsv/src/App.js" >
+                            News
+                        </Link>
+
                         <Link className="dropdown-item" to="privacy.js" >
                             Terms and policies
                         </Link>
-
-                       <div> <Link className="dropdown-item" to="ipl-dashboard-master/src/pages/App.js">
+                        <div> <Link className="dropdown-item" to="ipl-dashboard-master/src/pages/App.js">
                             IPL
                         </Link> </div>
                         <div className="dropdown-divider"></div>

@@ -7,13 +7,13 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && npm run start",
-    "news": "cd client/src/pages/newsv && npm run start",
+    "news": "cd newsv && npm run start",
     "server-install": "npm install",
     "client-install": "cd client && npm install",
     "news-install": "cd client/src/pages/newsv && npm install",
     "install-all": "concurrently \"npm run server-install\" \"npm run client-install\" \"npm run news-install\" ",
     "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run news\" ",
-    "heroku-postbuild": "concurrently \"cd client && npm install && npm run build\" \"cd client/src/pages/newsv && npm install && npm run build\" "
+    "heroku-postbuild": "concurrently \"cd client && npm install && npm run build\" \"cd newsv && npm install && npm run build\" "
   },
   "keywords": [],
   "author": "",
