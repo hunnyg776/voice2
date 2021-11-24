@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography, Divider, Chip, TextField, Button } from '@material-ui/core';
-import { SimpleModal } from '@material-ui/core';
+import SimpleModal from '@mui/material/Modal';
 import emailjs from 'emailjs-com';
 
 import useStyles from './styles';
