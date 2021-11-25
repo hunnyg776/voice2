@@ -1,6 +1,7 @@
 {
   "name": "alan_react",
   "version": "0.1.0",
+  "proxy": "http://localhost:8000",
   "private": true,
   "dependencies": {
     "@alan-ai/alan-sdk-web": "^1.1.8",
