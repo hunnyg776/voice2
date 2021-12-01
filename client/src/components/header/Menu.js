@@ -74,7 +74,7 @@ const Menu = () => {
 
 
 
-                        <Link className="dropdown-item" to="newsv" >
+                        <Link className="dropdown-item" to="newsv/src/index.js" >
                             News
                         </Link>
 
